@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freddy Inocente Escobar - Gerente de Proyectos D-IA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #011c43;
+            --secondary-color: #1cdaff;
+            --accent-color: #ff5500;
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .company-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #011c43;
+        }
+
+        .logo-img {
+            height: 100px; /* Ajusta según necesidad */
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+            margin-bottom: 0.3rem; /* Espacio entre logo y texto */
+        }        
+                .business-card {
+            width: 100%;
+            max-width: 800px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        .card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .company-logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .company-slogan {
+            font-size: 1rem;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+        
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+        }
+        
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .profile-name {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .profile-title {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .naranjas {
+            color: var(--accent-color);
+        }
+
+        
+        .contact-info {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .contact-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .contact-text {
+            color: var(--text-color);
+        }
+        
+        .contact-label {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+        
+        .contact-value {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        .qr-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .qr-code {
+            width: 150px;
+            height: 150px;
+            background: #eee;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #999;
+            font-size: 0.8rem;
+        }
+        
+        .qr-text {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .btn {
+            padding: 12px 20px;
+            border-radius: 50px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background: var(--accent-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #e04b00;
+        }
+        
+        .btn-secondary {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #00122e;
+        }
+        
+        .btn i {
+            margin-right: 8px;
+        }
+        
+        @media (min-width: 768px) {
+            .business-card {
+                flex-direction: row;
+                min-height: 400px;
+            }
+            
+            .card-header {
+                width: 40%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .card-body {
+                width: 60%;
+            }
+            
+            .profile-section {
+                align-items: flex-start;
+            }
+            
+            .profile-name, .profile-title {
+                text-align: left;
+            }
+            
+            .contact-info {
+                margin-bottom: 20px;
+            }
+            
+            .qr-section {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .qr-text {
+                text-align: left;
+                width: calc(100% - 170px);
+            }
+            
+            .social-links {
+                justify-content: flex-start;
+            }
+            
+            .social-link {
+                margin: 0 10px 0 0;
+            }
+            
+            .action-buttons {
+                flex-direction: row;
+            }
+            
+            .btn {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="business-card">
+        <div class="card-header">
+            <div class="company-logo">
+                <img src="logo.png" alt="Logo D-IA" class="logo-img" />
+                <span>D-IA</span>
+            </div>
+            <div class="company-slogan naranjas">INTELIGENCIA ARTIFICIAL</div>
+        </div>
+        
+        <div class="card-body">
+            <div class="profile-section">
+                <h1 class="profile-name">Freddy Inocente Escobar</h1>
+                <h2 class="profile-title">Gerente de Proyectos</h2>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="contact-text">
+                        <div class="contact-label">Empresa</div>
+                        <div class="contact-value">D-IA (Desarrollo con Inteligencia Artificial)</div>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <div class="contact-label">Teléfono / WhatsApp</div>
+                        <div class="contact-value">+51 998 636 356</div>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-text">
+                        <div class="contact-label">Correo electrónico</div>
+                        <div class="contact-value">ventas@optimind.click</div>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="contact-text">
+                        <div class="contact-label">Sitio web / Portafolio</div>
+                        <div class="contact-value">optimind.click</div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="social-links">
+                <a href="#" class="social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://wa.me/51998636356" class="social-link" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" class="social-link" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="mailto:ventas@optimind.click" class="social-link" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            
+            <div class="action-buttons">
+                <a href="#" class="btn btn-primary" id="addContactBtn">
+                    <i class="fas fa-address-book"></i> Agregar a Contactos
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fas fa-share-alt"></i> Compartir
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Generar vCard para descargar
+            document.getElementById('addContactBtn').addEventListener('click', function() {
+                const vCard = `BEGIN:VCARD
+VERSION:3.0
+FN:Freddy Inocente Escobar
+ORG:D-IA (Desarrollo con Inteligencia Artificial)
+TITLE:Gerente de Proyectos
+TEL;TYPE=CELL,VOICE,WHATSAPP:+51 998 636 356
+EMAIL:ventas@optimind.click
+URL:optimind.click
+END:VCARD`;
+                
+                const blob = new Blob([vCard], { type: 'text/vcard' });
+                const url = URL.createObjectURL(blob);
+                
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'Freddy_Escobar.vcf';
+                link.click();
+                
+                URL.revokeObjectURL(url);
+            });
+            
+            // Función para compartir (implementación básica)
+            const shareButtons = document.querySelectorAll('.btn-secondary');
+            shareButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    if (navigator.share) {
+                        navigator.share({
+                            title: 'Freddy Inocente Escobar - Gerente de Proyectos',
+                            text: 'Mira la tarjeta de presentación de Freddy Inocente Escobar',
+                            url: window.location.href
+                        }).catch(err => {
+                            console.log('Error al compartir:', err);
+                        });
+                    } else {
+                        // Fallback para navegadores que no soportan Web Share API
+                        alert('Copie esta URL para compartir: ' + window.location.href);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
