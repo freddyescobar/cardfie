@@ -160,31 +160,39 @@
             font-weight: 500;
         }
         
-        .qr-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-        
-        .qr-code {
-            width: 150px;
-            height: 150px;
-            background: #eee;
-            margin-bottom: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #999;
-            font-size: 0.8rem;
-        }
-        
-        .qr-text {
-            font-size: 0.9rem;
-            color: var(--text-color);
-            text-align: center;
-        }
-        
+    /* Reemplaza la sección .qr-section existente con esto: */
+    .qr-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 40px 0; /* Aumenté el margen vertical */
+        padding: 20px;
+        background: rgba(1, 28, 67, 0.05); /* Fondo sutil azul claro */
+        border-radius: 15px;
+        border: 1px dashed var(--secondary-color); /* Borde punteado celeste */
+    }
+
+    .qr-code {
+        width: 180px; /* Aumenté el tamaño */
+        height: 180px;
+        margin-bottom: 20px;
+        padding: 10px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .qr-text {
+        font-size: 0.95rem;
+        color: var(--primary-color);
+        text-align: center;
+        max-width: 80%;
+        line-height: 1.5;
+        padding-left: 10px;
+    }        
         .social-links {
             display: flex;
             justify-content: center;
@@ -367,6 +375,22 @@
                     </div>
                 </div>
             </div>
+
+            <div class="qr-section">
+                <h3 style="color: var(--primary-color); margin-bottom: 15px;">
+                    <i class="fas fa-qrcode" style="margin-right: 8px;"></i>
+                    Escanea mi tarjeta digital
+                </h3>
+                
+                <div class="qr-code" id="qr-code">
+                    <!-- El QR se generará aquí automáticamente -->
+                </div>
+                
+                <p class="qr-text">
+                    Escanear este código y guarda 
+                    mis datos de contacto directamente en tu dispositivo
+                </p>
+            </div>
            
             <div class="social-links">
                 <a href="#" class="social-link" title="LinkedIn">
@@ -441,5 +465,19 @@ END:VCARD`;
             });
         });
     </script>
+
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script>
+        new QRCode(document.getElementById("qr-code"), {
+            text: window.location.href,
+            width: 150,
+            height: 150,
+            colorDark: "#011c43",  // Azul oscuro de tu paleta
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    </script>
+
+
 </body>
 </html>
